@@ -38,6 +38,12 @@ function Menu() {
         photoName="pizzas/funghi.jpg"
         price="20"
       />
+      <Pizza
+        name="Pizza focaccia"
+        ingredients="tomato,mozarella, spinach, and ricota chesse"
+        photoName="pizzas/focaccia.jpg"
+        price="20"
+      />
     </main>
   );
 }
@@ -59,7 +65,7 @@ function Footer() {
 function Pizza(props) {
   console.log(props);
   return (
-    <div>
+    <div className="pizza">
       <img src={props.photoName} alt={props.photoName} />
       <h3>{props.name}</h3>
       <p>{props.ingredients}</p>
