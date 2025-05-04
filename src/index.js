@@ -59,11 +59,22 @@ function App() {
 
 function Header() {
   const style = {};
-
   return (
     <header className="header">
       <h1 style={style}>Fast React Pizza Co.</h1>;
     </header>
+  );
+}
+
+function Pizza(props) {
+  console.log(props);
+  return (
+    <li className="pizza">
+      <img src={props.pizzaObj.photoName} alt={props.photoName} />
+      <h3>{props.pizzaObj.name}</h3>
+      <p>{props.pizzaObj.ingredients}</p>
+      <span>{props.pizzaObj.price}</span>
+    </li>
   );
 }
 
@@ -109,20 +120,26 @@ function Footer() {
 
   return (
     <footer className="footer">
-      {new Date().toLocaleTimeString()}. We're currently open
+      {isOpen ? (
+        <Order closeHour={closeHour} openHour={openHour} />
+      ) : (
+        <p>
+          We're happy to welcome you between {openHour}:00 and {closeHour}:00.
+        </p>
+      )}
     </footer>
   );
 }
 
-function Pizza(props) {
-  console.log(props);
+function Order({ closeHour, openHour }) {
   return (
-    <li className="pizza">
-      <img src={props.pizzaObj.photoName} alt={props.photoName} />
-      <h3>{props.pizzaObj.name}</h3>
-      <p>{props.pizzaObj.ingredients}</p>
-      <span>{props.pizzaObj.price}</span>
-    </li>
+    <div className="order">
+      <p>
+        We're open from {openHour}:00 to {closeHour}:00. Come visit us or order
+        online.
+      </p>
+      <button className="btn">Order</button>
+    </div>
   );
 }
 
