@@ -72,11 +72,11 @@ function Menu() {
     <main className="menu">
       <h2>Our Menu</h2>
 
-      <div>
+      <ul className="pizzas">
         {pizzaData.map((pizza) => (
           <Pizza pizzaObj={pizza} key={pizza.name} />
         ))}
-      </div>
+      </ul>
 
       {/* <Pizza
         name="Pizza Spinaci"
@@ -117,12 +117,12 @@ function Footer() {
 function Pizza(props) {
   console.log(props);
   return (
-    <div className="pizza">
+    <li className="pizza">
       <img src={props.pizzaObj.photoName} alt={props.photoName} />
       <h3>{props.pizzaObj.name}</h3>
       <p>{props.pizzaObj.ingredients}</p>
       <span>{props.pizzaObj.price}</span>
-    </div>
+    </li>
   );
 }
 
