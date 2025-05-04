@@ -138,9 +138,10 @@ function Order({ closeHour, openHour }) {
         We're open from {openHour}:00 to {closeHour}:00. Come visit us or order
         online.
       </p>
-      <button className="btn" href="https://github.com/haekalsutrisna">
-        Order
-      </button>
+      <button
+        className="btn"
+        onclick="window.location.href='https://github.com/haekalsutrisna'"
+      ></button>
     </div>
   );
 }
