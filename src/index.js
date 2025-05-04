@@ -47,6 +47,18 @@ const pizzaData = [
   },
 ];
 
+function Pizza(props) {
+  console.log(props);
+  return (
+    <li className="pizza">
+      <img src={props.pizzaObj.photoName} alt={props.photoName} />
+      <h3>{props.pizzaObj.name}</h3>
+      <p>{props.pizzaObj.ingredients}</p>
+      <span>{props.pizzaObj.price}</span>
+    </li>
+  );
+}
+
 function App() {
   return (
     <div>
@@ -61,20 +73,8 @@ function Header() {
   const style = {};
   return (
     <header className="header">
-      <h1 style={style}>Fast React Pizza Co.</h1>;
+      <h1 style={style}>Fast Haekal Pizza Co.</h1>;
     </header>
-  );
-}
-
-function Pizza(props) {
-  console.log(props);
-  return (
-    <li className="pizza">
-      <img src={props.pizzaObj.photoName} alt={props.photoName} />
-      <h3>{props.pizzaObj.name}</h3>
-      <p>{props.pizzaObj.ingredients}</p>
-      <span>{props.pizzaObj.price}</span>
-    </li>
   );
 }
 
