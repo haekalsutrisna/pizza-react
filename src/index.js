@@ -140,8 +140,12 @@ function Order({ closeHour, openHour }) {
       </p>
       <button
         className="btn"
-        onclick="window.location.href='https://github.com/haekalsutrisna'"
-      ></button>
+        onClick={() =>
+          (window.location.href = "https://github.com/haekalsutrisna")
+        }
+      >
+        Order
+      </button>
     </div>
   );
 }
